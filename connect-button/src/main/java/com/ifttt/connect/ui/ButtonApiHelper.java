@@ -30,7 +30,7 @@ import static com.ifttt.connect.ui.ConnectButtonState.Login;
  */
 final class ButtonApiHelper {
 
-    private static final String SHOW_CONNECTION_API_URL = "https://ifttt.com/access/api/";
+    private static final String SHOW_CONNECTION_API_URL = "http://ifttt.me/access/api/";
     private static final String PACKAGE_NAME_IFTTT = "com.ifttt.ifttt";
 
     private final ConnectionApiClient connectionApiClient;
@@ -217,7 +217,7 @@ final class ButtonApiHelper {
     @Nullable
     static Intent redirectToManage(Context context, String id) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("https://ifttt.com/connections/" + id));
+        intent.setData(Uri.parse("http://ifttt.me/connections/" + id));
         if (!hasActivityToLaunch(context, intent)) {
             return null;
         }
@@ -228,7 +228,7 @@ final class ButtonApiHelper {
     @CheckReturnValue
     @Nullable
     static Intent redirectToTerms(Context context) {
-        Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://ifttt.com/terms"));
+        Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("http://ifttt.me/terms"));
         if (!hasActivityToLaunch(context, intent)) {
             return null;
         }
